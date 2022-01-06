@@ -23,10 +23,6 @@ fun View.setOnSingleClickListener(listener: View.OnClickListener?) {
 
         // Check is user click before safety interval
         if(Date().time - lastUserClickOn < MIN_CLICK_INTERVAL_IN_MILLI){
-
-            // Store User's Last Click
-            lastUserClickOn = Date().time
-
             return@setOnClickListener
         }
 
