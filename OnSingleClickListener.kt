@@ -8,6 +8,7 @@ import java.util.*
  *
  * @author Rajat Sarangal
  * @since December 31, 2021
+ * @link https://github.com/thesarangal/OnSingleClickListener
  * */
 
 // Minimum Interval Time Between Next Click
