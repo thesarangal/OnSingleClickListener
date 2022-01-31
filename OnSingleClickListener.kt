@@ -5,7 +5,7 @@ import java.util.*
  * View Extension Function to prevent double click
  *
  * @author Rajat Sarangal
- * @since December 31, 2021
+ * @since January 31, 2021
  * @link https://github.com/thesarangal/OnSingleClickListener
  * */
 
@@ -31,5 +31,4 @@ fun View.setOnSingleClickListener(listener: View.OnClickListener?) {
         // Invoke Callback
         listener?.onClick(it)
     }
-
 }
