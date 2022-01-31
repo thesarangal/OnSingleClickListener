@@ -1,5 +1,3 @@
-package com.relinns.medoplus.utills.extension
-
 import android.view.View
 import java.util.*
 
