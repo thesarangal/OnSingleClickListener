@@ -1,32 +1,33 @@
 import android.view.View
-import java.util.*
 
 /**
  * View Extension Function to prevent double click
  *
  * @author Rajat Sarangal
- * @since January 31, 2021
+ * @since April 01, 2023
  * @link https://github.com/thesarangal/OnSingleClickListener
  * */
-
-// Minimum Interval Time Between Next Click
-const val MIN_CLICK_INTERVAL_IN_MILLI = 500
 
 // Time of last click
 var lastUserClickOn = 0L
 
-fun View.setOnSingleClickListener(listener: View.OnClickListener?) {
+fun View.setOnSingleClickListener(
+    minClickIntervalInMillis: Long = 500,
+    listener: View.OnClickListener?
+) {
 
     // Register Generic Callback when this view is clicked.
     setOnClickListener {
 
+        val currentTime = System.currentTimeMillis()
+
         // Check is user click before safety interval
-        if(Date().time - lastUserClickOn < MIN_CLICK_INTERVAL_IN_MILLI){
+        if (currentTime - lastUserClickOn < minClickIntervalInMillis) {
             return@setOnClickListener
         }
 
         // Store User's Last Click
-        lastUserClickOn = Date().time
+        lastUserClickOn = currentTime
 
         // Invoke Callback
         listener?.onClick(it)
